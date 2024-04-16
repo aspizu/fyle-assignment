@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/reset.css" />
+        <link rel="stylesheet" href="/index.css" />
+        <title>Tax Calculator</title>
+    </head>
+    <body>
+        <form class="form" id="form">
+            <div class="label">
+                <label class="label__text" for="gross_annual_income"
+                    >Gross annual income</label
+                >
+                <div class="label__info-parent">
+                    <button class="info-icon label__info">i</button>
+                    <div class="tooltip tooltip--left label__info-dialog hidden">
+                        Gross annual income is the total amount of money you earn in a
+                        year before any taxes or deductions are taken out.
+                    </div>
+                </div>
+            </div>
+            <div class="input gross-annual-income">
+                <input
+                    class="input__inner"
+                    data-type="currency"
+                    type="text"
+                    name="gross_annual_income"
+                />
+                <div class="input__error hidden">
+                    <button class="info-icon input__error-icon">!</button>
+                    <div
+                        class="hidden tooltip tooltip--right tooltip--error input__error-dialog"
+                    >
+                        Please enter a valid number. The number should be greater than
+                        0.
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+                <label class="label__text" for="extra_income">Extra income</label>
+                <div class="label__info-parent">
+                    <button class="info-icon label__info">i</button>
+                    <div class="tooltip tooltip--left label__info-dialog hidden">
+                        Extra income is any additional money you earn outside of your
+                        regular job. This could include freelance work, rental income,
+                        or investment income.
+                    </div>
+                </div>
+            </div>
+            <div class="input extra-income">
+                <input
+                    class="input__inner"
+                    data-type="currency"
+                    type="text"
+                    name="extra_income"
+                />
+                <div class="input__error hidden">
+                    <button class="info-icon input__error-icon">!</button>
+                    <div
+                        class="hidden tooltip tooltip--right tooltip--error input__error-dialog"
+                    >
+                        Please enter a valid number. The number should be greater than
+                        0.
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+                <label class="label__text">Age group</label>
+                <div class="label__info-parent">
+                    <button class="info-icon label__info">i</button>
+                    <div class="tooltip tooltip--left label__info-dialog hidden">
+                        Your age group determines the tax brackets and deductions that
+                        apply to you. Different age groups may have different tax rates
+                        and deductions available.
+                    </div>
+                </div>
+            </div>
+            <div class="select age-group">
+                <button class="select__button">No option selected.</button>
+                <div class="select__options hidden">
+                    <button class="select__option">less than 40</button>
+                    <button class="select__option">40 to 60</button>
+                    <button class="select__option">more than 60</button>
+                </div>
+            </div>
+            <div class="label">
+                <label class="label__text" for="total_applicable_deductions"
+                    >Total applicable deductions</label
+                >
+                <div class="label__info-parent">
+                    <button class="info-icon label__info">i</button>
+                    <div class="tooltip tooltip--left label__info-dialog hidden">
+                        Total applicable deductions are the sum of all deductions you
+                        can claim on your tax return. This could include deductions for
+                        student loan interest, retirement contributions, or health
+                        savings account contributions.
+                    </div>
+                </div>
+            </div>
+            <div class="input total-applicable-deductions">
+                <input
+                    class="input__inner"
+                    data-type="currency"
+                    type="text"
+                    name="total_applicable_deductions"
+                />
+                <div class="input__error hidden">
+                    <button class="info-icon input__error-icon">!</button>
+                    <div
+                        class="hidden tooltip tooltip--right tooltip--error input__error-dialog"
+                    >
+                        Please enter a valid number. The number should be greater than
+                        0.
+                    </div>
+                </div>
+            </div>
+            <button class="form__submit submit" type="submit">Calculate</button>
+        </form>
+        <div class="modal-backdrop hidden" id="modal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h1 class="modal-header__title">Your overall income will be</h1>
+                    <button class="modal-header__close">⨯</button>
+                </div>
+                <div class="modal-body">
+                    <p class="overall-income">12,00,00</p>
+                    <h2>after tax deductions</h2>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/src/index.js"></script>
+    </body>
+</html>

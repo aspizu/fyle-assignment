@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Material Symbols Icon Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/reset.css" />
+        <link rel="stylesheet" href="/index.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="header">Tax Calculator</div>
+        <div id="form">
+            <div class="gross-annual-income input">
+                <span class="input__label">Gross annual income</span>
+                <div class="input__container">
+                    <span class="input__icon">₹</span>
+                    <input class="input__input" type="text" />
+                    <button class="input__clear icon-button icon-button--clear hidden">
+                        close
+                    </button>
+                </div>
+                <span class="input__hint"
+                    >Gross annual income is your total salary before any
+                    deductions.</span
+                >
+            </div>
+            <div class="extra-income input">
+                <span class="input__label">Extra income</span>
+                <div class="input__container">
+                    <span class="input__icon">₹</span>
+                    <input class="input__input" type="text" />
+                    <button class="input__clear icon-button icon-button--clear hidden">
+                        close
+                    </button>
+                </div>
+                <span class="input__hint">
+                    Extra income is any additional income you earn.
+                </span>
+            </div>
+            <div class="age-group select">
+                <span class="select__label">Age group</span>
+                <div class="select__container">
+                    <button class="select__button">
+                        <div class="icon">expand_more</div>
+                        <div class="select__selected">Choose an option.</div>
+                    </button>
+                    <div class="select__options hidden">
+                        <button class="select__option" data-key="BELOW_40">
+                            &lt; 40
+                        </button>
+                        <button class="select__option" data-key="BETWEEN_40_AND_60">
+                            &ge; 40 &amp; &lt; 60
+                        </button>
+                        <button class="select__option" data-key="ABOVE_60">
+                            &ge; 60
+                        </button>
+                    </div>
+                </div>
+                <span class="select__hint">Select your age group.</span>
+            </div>
+            <div class="total-applicable-deductions input">
+                <span class="input__label">Total applicable deductions</span>
+                <div class="input__container">
+                    <span class="input__icon">₹</span>
+                    <input class="input__input" type="text" />
+                    <button class="input__clear icon-button icon-button--clear hidden">
+                        close
+                    </button>
+                </div>
+                <span class="input__hint">
+                    Total applicable deductions are the deductions you can claim on your
+                    income.
+                </span>
+            </div>
+            <button class="calculate button">Calculate</button>
+            <div class="disclaimer">
+                This is an assignment for an internship created using pure HTML, CSS and
+                TypeScript. The data is not stored or sent to any server. The tax
+                calculations are just for demonstration.
+            </div>
+        </div>
+
+        <div id="toasts" class="toasts"></div>
+        <div id="modal" class="hidden modal-backdrop">
+            <div class="modal hidden">
+                <div class="modal-header">
+                    <h1 class="modal-header__title">Here is your overall income 💸</h1>
+                    <button class="modal-header__close icon-button icon-button--clear">
+                        close
+                    </button>
+                </div>
+                <div class="income-modal modal-body">
+                    <span class="income-modal__income">$ 10,100,100 </span>
+                    <span class="income-modal__subtext">after tax deductions 💰</span>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/src/index.js"></script>
+    </body>
+</html>
